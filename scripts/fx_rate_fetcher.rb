@@ -50,7 +50,7 @@ class FxRateFetcher
   def getMufgRate(date)
     agent = Mechanize.new
     agent.redirect_ok = false
-    url = "http://www.murc-kawasesouba.jp/fx/past_3month_result.php?y=#{date.year}&m=#{date.month}&d=#{date.day}&c="
+    url = "https://www.murc-kawasesouba.jp/fx/past_3month_result.php?y=#{date.year}&m=#{date.month}&d=#{date.day}&c="
     page = agent.get(url)
     if page.code == "302"
       # no data on the day.
